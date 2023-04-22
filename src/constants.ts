@@ -1,0 +1,16 @@
+export const BLOCKS_MONTHLY = [
+    { number: 13915898, timestamp: 1640991600000 },
+    { number: 14116506, timestamp: 1643670007000 },
+    { number: 14297481, timestamp: 1646089202000 },
+    { number: 14496497, timestamp: 1648764007000 },
+    { number: 14688134, timestamp: 1651356000000 },
+    { number: 14881160, timestamp: 1654034412000 },
+    { number: 15052748, timestamp: 1656626400000 },
+    { number: 15252793, timestamp: 1659304805000 },
+    { number: 15449105, timestamp: 1661983208000 },
+    { number: 15648998, timestamp: 1664575211000 },
+    { number: 15871181, timestamp: 1667257211000 },
+    { number: 16085936, timestamp: 1669849211000 },
+    { number: 16307891, timestamp: 1672527611000 },
+    { number: 16529948, timestamp: 1675206011000 },
+]
