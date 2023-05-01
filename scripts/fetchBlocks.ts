@@ -8,6 +8,7 @@ const sleep = (milliseconds: number) => {
 
 enum Interval {
     day = "day",
+    week = "week",
     month = "month",
     year = "year",
 }
@@ -24,6 +25,9 @@ const getTimestamps = (args: {
     switch (args.interval) {
         case Interval.day:
             increase = (date: Date) => date.setDate(date.getDate() + 1)
+            break
+        case Interval.week:
+            increase = (date: Date) => date.setDate(date.getDate() + 7)
             break
         case Interval.month:
             increase = (date: Date) => date.setMonth(date.getMonth() + 1)
@@ -44,7 +48,7 @@ const getTimestamps = (args: {
 
 const main = async () => {
     const timestamps = getTimestamps({
-        interval: Interval.month,
+        interval: Interval.week,
         start: new Date(2021, 11),
     })
     const blocks: RawBlock[] = []
