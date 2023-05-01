@@ -1,0 +1,77 @@
+fragment bondData on Bond {
+    id
+    startDate
+    maturityDate
+    totalCollateral
+    totalCollateralAtMaturity
+    totalDebt
+    totalDebtAtMaturity
+    isMature
+    collateral {
+        name
+        symbol
+        id
+        decimals
+    }
+}
+
+fragment trancheData on Tranche {
+    index
+    ratio
+    totalCollateral
+    totalCollateralAtMaturity
+    totalSupplyAtMaturity
+    token {
+        id
+        name
+        symbol
+        decimals
+        totalSupply
+    }
+}
+
+fragment trancheDataMin on Tranche {
+    index
+    ratio
+    totalCollateral
+}
+
+fragment blockData on _Meta_ {
+    block {
+        number
+        timestamp
+    }
+}
+
+query Bonds {
+    bonds {
+        ...bondData
+        tranches(orderDirection: asc, orderBy: index) {
+            ...trancheDataMin
+        }
+    }
+    _meta {
+        ...blockData
+    }
+}
+
+query BondsAtBlock($blockNumber: Int!) {
+    bonds(block: { number: $blockNumber }) {
+        ...bondData
+    }
+    _meta {
+        ...blockData
+    }
+}
+
+query Bond($address: ID!) {
+    bond(id: $address) {
+        ...bondData
+        tranches(orderDirection: asc, orderBy: index) {
+            ...trancheData
+        }
+    }
+    _meta {
+        ...blockData
+    }
+}
