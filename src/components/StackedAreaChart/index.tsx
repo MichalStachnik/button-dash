@@ -60,7 +60,7 @@ export const CollateralAreaChart = ({
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" interval={2} />
+                    <XAxis dataKey="date" interval={10} />
                     <YAxis />
                     <Tooltip formatter={(v: any) => formatNumber(v)} />
                     {Object.keys(tokenValueBase).map((token, index) => (
