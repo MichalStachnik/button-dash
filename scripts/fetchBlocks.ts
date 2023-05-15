@@ -48,7 +48,7 @@ const getTimestamps = (args: {
 
 const main = async () => {
     const timestamps = getTimestamps({
-        interval: Interval.week,
+        interval: Interval.day,
         start: new Date(2021, 11),
     })
     const blocks: RawBlock[] = []
